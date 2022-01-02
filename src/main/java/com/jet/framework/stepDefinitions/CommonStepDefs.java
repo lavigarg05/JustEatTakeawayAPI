@@ -35,17 +35,31 @@ public class CommonStepDefs extends Utils{
 	Response resp;
 	Payload result;
 	TestDataBuilder data=new TestDataBuilder();
+	String pathParameters;
+	String queryParameters;
 
 	@Given("I create a new payload")
 	public void createPayload(DataTable dt) throws FileNotFoundException {	
 		List<Map<String, String>> datamap = dt.asMaps(String.class,String.class);
 		logger.info("Creating payload : "+datamap.get(0));
 		req = given().spec(requestSpecification()).body(data.AddPayload(datamap)).log().all();
-	}	
+	}
+	
+	
+	@Given("I set \"(\\w+)\" parameters")
+	public void createPayload(String parameterType,DataTable dt) throws FileNotFoundException {
 
+		List<Map<String, String>> parameterMap =  dt.asMaps(String.class,String.class);
+		if(parameterType.equalsIgnoreCase("path")) 
+				req = given().spec(requestSpecification()).pathParam("id", parameterMap.get(0).get("id"));
+
+	}
+	
+	
 	@When("I send \"(\\w+)\" with \"(\\w+)\" http request")
-	public void createResource(String resource,String method) {
-		logger.info("");
+	public void createResource(String resource,String method) throws FileNotFoundException {
+		if(req==null)
+			req = given().spec(requestSpecification());
 		APIResources resourceAPI=APIResources.valueOf(resource);
 		if(method.equalsIgnoreCase("POST"))
 			resp=req.when().post(resourceAPI.getResource());
@@ -59,22 +73,30 @@ public class CommonStepDefs extends Utils{
 	@Then("The API call is successfull with status code \"(\\d+)\"")
 	public void statusCodeverify(int status) {
 		respSpec = new ResponseSpecBuilder().expectStatusCode(status).expectContentType(ContentType.JSON).build();
-		resp = resp.then().extract().response();
+		resp = resp.then().spec(respSpec).extract().response();
 		logger.info("Response status code verification : status is : "+ status);
 	}
 	
 	@Then("verify \"(\\w+)\" in response body is \"(.*)\"")
-	public void idVerify(String field,String value) {
+	public void responseVerify(String field,String value) {
 		result = resp.as(Payload.class);	
 		if (field.equalsIgnoreCase("id"))
-			assertEquals(result.getId(),Integer.parseInt(value));	
+			assertEquals(Integer.parseInt(value),result.getId());	
 		else if(field.equalsIgnoreCase("userId"))
-			assertEquals(result.getUserId(),Integer.parseInt(value));	
+			assertEquals(Integer.parseInt(value),result.getUserId());	
 		else if(field.equalsIgnoreCase("title"))
-			assertEquals(result.getTitle(),value);	
+			assertEquals(value,result.getTitle());	
 		else if(field.equalsIgnoreCase("body"))
-			assertEquals(result.getBody(),value);	
+			assertEquals(value,result.getBody());	
 		logger.info("Response Payload verification : " +field+" is : "+ value);
 	}
-
+	
+	@Then("verify total comments in response body are \"(\\d+)\"")
+	public void commentsVerify(int count) {
+		String result = resp.asString();	
+		JsonPath js=new JsonPath(result);
+		int actualCount = js.get("result.size()");
+		assertEquals(count,actualCount);	
+		logger.info("Response Payload verification : Total Comments are : "+actualCount);
+	}
 }

@@ -1,0 +1,8 @@
+22:12:44.421 [main] INFO  com.jet.framework.base.Base - ********************************Test - Add a new post*************************************
+22:12:44.430 [main] INFO  com.jet.framework.base.Base - Creating payload : {UserId=123, Title=Create a new post, Body=This is an awesome !}
+22:12:49.340 [main] INFO  com.jet.framework.base.Base - POST request sent for AddNewPostAPI
+22:12:49.373 [main] INFO  com.jet.framework.base.Base - Response status code verification : status is : 201
+22:12:49.438 [main] INFO  com.jet.framework.base.Base - Response Payload verification : id is : 101
+22:12:49.441 [main] INFO  com.jet.framework.base.Base - Response Payload verification : title is : Create a new post
+22:12:49.444 [main] INFO  com.jet.framework.base.Base - Response Payload verification : body is : This is an awesome !
+22:12:49.446 [main] INFO  com.jet.framework.base.Base - Response Payload verification : userId is : 123

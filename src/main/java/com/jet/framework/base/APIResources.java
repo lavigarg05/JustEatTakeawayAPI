@@ -1,7 +1,9 @@
 package com.jet.framework.base;
 
 public enum APIResources {
-	AddPostAPI("/posts");
+	AddNewPostAPI("/posts"),
+	GetPostAPI("posts/{id}"),
+	GetPostCommentsAPI("posts/{id}/comments");
 	
 	
 	private String resource;

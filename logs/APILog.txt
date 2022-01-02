@@ -12,70 +12,19 @@ Multiparts:		<none>
 Body:
 {
     "id": 1,
-    "title": "foo",
-    "body": "bar",
-    "userId": 1
-}
-HTTP/1.1 201 Created
-Date: Sun, 02 Jan 2022 16:25:08 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 65
-Connection: keep-alive
-x-powered-by: Express
-x-ratelimit-limit: 1000
-x-ratelimit-remaining: 999
-x-ratelimit-reset: 1641140756
-vary: Origin, X-HTTP-Method-Override, Accept-Encoding
-access-control-allow-credentials: true
-cache-control: no-cache
-pragma: no-cache
-expires: -1
-access-control-expose-headers: Location
-location: http://jsonplaceholder.typicode.com/posts/101
-x-content-type-options: nosniff
-etag: W/"41-8BtabNmz8rv56ChQWFRz0Ts2cT8"
-via: 1.1 vegur
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=fkMv4%2F3sfYNwgT97r4xjMcmCNbkY6VJDcUAVFkAog8KTKi0t4Yu2MPGOhwLnbV89dpRwoJYB%2FpRM62rib6pezHguNSxk%2FRvgXI4gV%2Bya5vof%2FFXS30%2Bdhp2r2ERnT18dZSkc7qTQYcONk0KtF12I"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 6c755772d9318569-BOM
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
-
-{
-    "id": 101,
-    "title": "foo",
-    "body": "bar",
-    "userId": 1
-}
-Request method:	POST
-Request URI:	https://jsonplaceholder.typicode.com/posts
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "id": 1,
     "title": "Create a new post",
     "body": "This is an awesome !",
     "userId": 123
 }
 HTTP/1.1 201 Created
-Date: Sun, 02 Jan 2022 16:25:10 GMT
+Date: Sun, 02 Jan 2022 20:38:35 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 98
 Connection: keep-alive
 x-powered-by: Express
 x-ratelimit-limit: 1000
-x-ratelimit-remaining: 998
-x-ratelimit-reset: 1641140756
+x-ratelimit-remaining: 999
+x-ratelimit-reset: 1641155938
 vary: Origin, X-HTTP-Method-Override, Accept-Encoding
 access-control-allow-credentials: true
 cache-control: no-cache
@@ -88,10 +37,10 @@ etag: W/"62-5xpDPoyjSxqa3GulToZ+be5tuqw"
 via: 1.1 vegur
 CF-Cache-Status: DYNAMIC
 Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=IYEiVcapE4uWahcpSyAgFxRo1Bj3UvWwdGXuP4%2FLFDI%2BH3iHYE1zcfXmTT6R1syyZiRp2YkOeL5DujFpxFb1K6%2Bbu9qPG7KAa0XJtB2nrp9LpxtwlQaAj6DvS5PdjhTfZ1oF%2FxXEwa6ZOpmUpqKh"}],"group":"cf-nel","max_age":604800}
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Uc7b%2BowyfRXjCFtxthFwbsK5A2sINo1pTXHTDqnS%2B8q%2BvHLYDX9mkXeJkt2LS2yx1Qs8eHDcgAFraSYJB3h4GX%2Fu0FF9jA0V5XQRSCOk%2FXCZIKE1XtCOfyOeIH4z9R1x4rtgJJKKpeGmd1JsSw0d"}],"group":"cf-nel","max_age":604800}
 NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
 Server: cloudflare
-CF-RAY: 6c75577a7d732e04-BOM
+CF-RAY: 6c76cab45f62e312-CCU
 alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 
 {
@@ -100,3 +49,124 @@ alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3
     "body": "This is an awesome !",
     "userId": 123
 }
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts/50
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	id=50
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Sun, 02 Jan 2022 20:38:37 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+x-ratelimit-limit: 1000
+x-ratelimit-remaining: 998
+x-ratelimit-reset: 1641154378
+vary: Origin, Accept-Encoding
+access-control-allow-credentials: true
+cache-control: max-age=43200
+pragma: no-cache
+expires: -1
+x-content-type-options: nosniff
+etag: W/"14d-XND1VIG+pZHF+RVMSi1awppS1XI"
+via: 1.1 vegur
+CF-Cache-Status: HIT
+Age: 1570
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=y%2BmfKqNKuVDCSCaxy8VgL3XSKN69SSG03PVHL0TN2rucqFFUk9TuNLe7CThjpvlHhn%2FcE4jmAIePoXpZTiVcwzkNBu7HqY%2FzXr0djb5lxt5dXRMgxkeIxklL8hKPNEBudd584%2FDXEPQ8UGHyihp%2B"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6c76cac5280be33e-CCU
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
+
+{
+    "userId": 5,
+    "id": 50,
+    "title": "repellendus qui recusandae incidunt voluptates tenetur qui omnis exercitationem",
+    "body": "error suscipit maxime adipisci consequuntur recusandae\nvoluptas eligendi et est et voluptates\nquia distinctio ab amet quaerat molestiae et vitae\nadipisci impedit sequi nesciunt quis consectetur"
+}
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts/50/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	id=50
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Sun, 02 Jan 2022 20:38:37 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+x-ratelimit-limit: 1000
+x-ratelimit-remaining: 999
+x-ratelimit-reset: 1641153418
+vary: Origin, Accept-Encoding
+access-control-allow-credentials: true
+cache-control: max-age=43200
+pragma: no-cache
+expires: -1
+x-content-type-options: nosniff
+etag: W/"649-0I2UDGoFBv++8yn4SExaagmUbQM"
+content-encoding: gzip
+via: 1.1 vegur
+CF-Cache-Status: HIT
+Age: 2525
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=IPNBssl8juOJz82ZpkvyO4w%2FWvdAPBs04XFiBvXOld74cltyjaHHclwUoO%2ByvA71GSv55uTdNMuBwbk6MRTV1zODBxPFHZmOAnu7WAQGkVEXRcT2Hpc1lPRF7Ss%2BQ6EeeCjUWUSwDbP%2F9q05nByE"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6c76cac6e9c5e336-CCU
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
+
+[
+    {
+        "postId": 50,
+        "id": 246,
+        "name": "magnam earum qui eaque sunt excepturi",
+        "email": "Jaycee.Turner@euna.name",
+        "body": "quia est sed eos animi optio dolorum\nconsequatur reiciendis exercitationem ipsum nihil omnis\nbeatae sed corporis enim quisquam\net blanditiis qui nihil"
+    },
+    {
+        "postId": 50,
+        "id": 247,
+        "name": "vel aut blanditiis magni accusamus dolor soluta",
+        "email": "Wilbert@cheyenne.ca",
+        "body": "explicabo nam nihil atque sint aut\nqui qui rerum excepturi soluta quis et\net mollitia et voluptate minima nihil\nsed quaerat dolor earum tempore et non est voluptatem"
+    },
+    {
+        "postId": 50,
+        "id": 248,
+        "name": "voluptatum sint dicta voluptas aut ut",
+        "email": "Rebecca_Hessel@edna.net",
+        "body": "assumenda aut quis repellendus\nnihil impedit cupiditate nemo\nsit sequi laudantium aut voluptas nam dolore magnam\nminima aspernatur vero sapiente"
+    },
+    {
+        "postId": 50,
+        "id": 249,
+        "name": "quibusdam dignissimos aperiam sint commodi",
+        "email": "Christiana@lawrence.info",
+        "body": "non repudiandae dicta et commodi\nsint dolores facere eos nesciunt autem quia\nplaceat quaerat non culpa quasi dolores voluptas\ndolorum placeat non atque libero odit autem sunt"
+    },
+    {
+        "postId": 50,
+        "id": 250,
+        "name": "perferendis magnam natus exercitationem eveniet sunt",
+        "email": "Samara@shaun.org",
+        "body": "doloremque quae ratione cumque\nexcepturi eligendi delectus maiores necessitatibus veniam\nfugiat exercitationem consectetur vel earum\nquia illo explicabo molestiae enim rem deserunt et omnis"
+    }
+]

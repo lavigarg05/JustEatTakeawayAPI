@@ -80,6 +80,7 @@
           		
           		<include>**/*TestRunner*.java</include>
           	</includes>
+          	<testFailureIgnore>true</testFailureIgnore>
           </configuration>
         </plugin> 
          <plugin>
