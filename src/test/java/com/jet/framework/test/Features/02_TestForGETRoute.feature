@@ -1,5 +1,5 @@
 #Author: lavigarg05@gmail.com
-Feature: Get_An_Existing_Post
+Feature: Test all GET routes
 
   @GetPost @Regression
   Scenario Outline: Test to get an existing post
@@ -19,7 +19,7 @@ Feature: Get_An_Existing_Post
 
 
   @GetComments @Regression
-  Scenario Outline: Test to get total comments in an existing post 
+  Scenario Outline: Test to get total comments in an existing post using path parameter
     Given I set "path" parameters
     |id    | 
     | <id> |   
@@ -30,4 +30,28 @@ Feature: Get_An_Existing_Post
     Examples: 
        | id    | statusCode  |commentCount |
        |   50  | 200         | 5           |
+
+  @GetCommentsWithQueryParam @Regression
+  Scenario Outline: Test to get total comments in an existing post using query parameter
+    Given I set "query" parameters
+    |postId        | 
+    | <postId>     |   
+    When I send "GetCommentsAPI" with "GET" http request 
+    Then The API call is successfull with status code "<statusCode>"
+    And verify total comments in response body are "<commentCount>"
+
+    Examples: 
+       | postId| statusCode  |commentCount |
+       |   50  | 200         | 5           |
+              
+  @GetAllPosts @Regression
+  Scenario Outline: Test to get all existing posts 
+ 
+    When I send "GetAllPostsAPI" with "GET" http request 
+    Then The API call is successfull with status code "<statusCode>"
+    And verify total posts in response body are "<postsCount>"
+
+    Examples: 
+       | statusCode  |postsCount   |
+			 | 200         |100          |       
 

@@ -52,6 +52,8 @@ public class CommonStepDefs extends Utils{
 		List<Map<String, String>> parameterMap =  dt.asMaps(String.class,String.class);
 		if(parameterType.equalsIgnoreCase("path")) 
 				req = given().spec(requestSpecification()).pathParam("id", parameterMap.get(0).get("id"));
+		if(parameterType.equalsIgnoreCase("query")) 
+			req = given().spec(requestSpecification()).queryParam("postId", parameterMap.get(0).get("postId"));
 
 	}
 	
@@ -91,12 +93,12 @@ public class CommonStepDefs extends Utils{
 		logger.info("Response Payload verification : " +field+" is : "+ value);
 	}
 	
-	@Then("verify total comments in response body are \"(\\d+)\"")
-	public void commentsVerify(int count) {
+	@Then("verify total (\\w+) in response body are \"(\\d+)\"")
+	public void commentsVerify(String responseType,int count) {
 		String result = resp.asString();	
 		JsonPath js=new JsonPath(result);
 		int actualCount = js.get("result.size()");
 		assertEquals(count,actualCount);	
-		logger.info("Response Payload verification : Total Comments are : "+actualCount);
+		logger.info("Response Payload verification : Total "+responseType+" are : "+actualCount);
 	}
 }
