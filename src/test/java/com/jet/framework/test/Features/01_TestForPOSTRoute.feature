@@ -1,5 +1,5 @@
 #Author: lavigarg05@gmail.com
-Feature: Add_A_New_Post
+Feature: Test POST route
 
   @AddPost @Regression
   Scenario Outline: Test to add a new post 
